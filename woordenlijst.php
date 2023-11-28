@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>bruh</title>
+</head>
 <body>
 
 <?php
@@ -13,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["woordenlijst_naam"])) 
 } elseif ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["woordenlijst_naam"])) {
     $selectedNaam = $_GET["woordenlijst_naam"];
 } else {
-    // Als er nog geen woordenlijst is gekozen, toon het formulier om er een te kiezen
+    // Als er nog geen woordenlijst is gekozen, stuur terug naar select woordenlijst
     echo "<a href='select_woordenlijst.php'>Kies eerst een woordenlijstnaam</a>";
 }
 
@@ -34,8 +35,6 @@ echo "Zin Achter: <input type='text' name='zin_achter'><br>";
 echo "<input type='submit' value='Voeg toe'>";
 echo "</form>";
 
-// Toon woordenlijst
-displayWoordenlijst($conn, $selectedNaam);
 
 // Gegevens toevoegen
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["woordenlijst_naam"]) && isset($_POST["woord"])) {
@@ -76,6 +75,9 @@ if (isset($_GET["delete"])) {
     }
 }
 
+// Woordenlijst (Verplaatsbaar maar boven de $conn->close();)
+displayWoordenlijst($conn, $selectedNaam);
+
 // Woordenlijst weergeven
 function displayWoordenlijst($conn, $selectedNaam) {
     // Gegevens weergeven voor de gekozen woordenlijst
@@ -109,6 +111,7 @@ function displayWoordenlijst($conn, $selectedNaam) {
         echo "<br>(Nog) geen resultaten gevonden voor woordenlijst: $selectedNaam";
     }
 }
+
 
 // Sluit de verbinding
 $conn->close();

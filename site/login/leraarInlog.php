@@ -2,15 +2,15 @@
 <html>
 
 <head>
-  <title>Login</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>Leraren Login</title>
+  <link rel="stylesheet" type="text/css" href="../CSS/login.css">
 </head>
 
 <body>
   <div class="login">
     <div class="container">
       <form class="form" method="POST" id="login">
-        <h1 class="form__title">Login</h1>
+        <h1 class="form__title">Leraren Login</h1>
         <div class="form__message form__message--error"></div>
         <div class="form__input-group">
           <input name="username" type="text" class="form__input" autofocus placeholder="Username" />
@@ -22,10 +22,10 @@
         </div>
         <button class="form__button" type="submit">Continue</button>
         <p class="form__text">
-          <a href="#" class="form__link">Forgot your password?</a>
+            <a class="form__link" href="login.html" id="linkCreateAccount">Student login</a>
         </p>
         <p class="form__text">
-          <a class="form__link" href="./create-account.html" id="linkCreateAccount">Don't have an account? Create
+          <a class="form__link" href="lerarenCreate-account.php" id="linkCreateAccount">Don't have an account? Create
             account</a>
         </p>
       </form>

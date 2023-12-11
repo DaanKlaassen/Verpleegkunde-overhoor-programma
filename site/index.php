@@ -14,7 +14,7 @@
     <!-- Main menu line on top of site -->
     <div class="main-menu">
       <a href="https://www.gildeopleidingen.nl"><img src="photos/logo.jpg" alt="logo" class="logo"></a>
-      <!-- Lang Change -->
+      <div class="Line"></div>
       <form method="post" class='formlout'>
         <button name='login' class='login'>Login</button>
         <button name='account' class='account'>Aanmelden</ion-icon></button>
@@ -23,7 +23,7 @@
     <div>
         <h1>De beste manier om Medische termen te oefenen</h1>
         <h2>Creëer gratis een account!</h2>
-        <form class="pos" action="/register.php" method= "POST">
+        <form class="pos" action="./login/create-account.php" method= "POST">
             <input type="email" name="Email"placeholder="Voer email adres in"></input>
             <button type="submit" class= "submit" >Aanmelden</button>
         </form>

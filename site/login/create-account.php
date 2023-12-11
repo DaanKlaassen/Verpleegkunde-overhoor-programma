@@ -2,15 +2,15 @@
 <html>
 
 <head>
-  <title>Create teacher account</title>
-      <link rel="stylesheet" href="style.css">
+  <title>Create Account</title>
+      <link rel="stylesheet" href="../CSS/login.css">
 </head>
 
 <body>
   <div class="login">
     <div class="container">
       <form class="form form--hidden" id="createAccount">
-        <h1 class="form__title">Create teacher account</h1>
+        <h1 class="form__title">Create Account</h1>
         <div class="form__message form__message--error"></div>
         <div class="form__input-group">
           <input type="text" class="form__input" id="signupUsername" name="username" autofocus placeholder="Username" />
@@ -29,10 +29,7 @@
         </div>
         <button class="form__button" type="submit">Continue</button>
         <p class="form__text">
-          <a class="form__link" href="./create-account.html" id="linkLogin">Create a student account</a>
-        </p>
-        <p class="form__text">
-          <a class="form__link" href="./login.html" id="linkLogin">Already have an account? Sign in</a>
+          <a class="form__link" href="login.php" id="linkLogin">Already have an account? Sign in</a>
         </p>
       </form>
     </div>

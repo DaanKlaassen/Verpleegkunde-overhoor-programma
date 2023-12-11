@@ -7,6 +7,10 @@
 </head>
 
 <body>
+<div class="main-menu">
+    <a href="https://www.gildeopleidingen.nl"><img src="../photos/logo.jpg" alt="logo" class="logo"></a>
+    <div class="Line"></div>
+</div>
   <div class="login">
     <div class="container">
       <form class="form" method="POST" id="login">

@@ -15,10 +15,8 @@
     <div class="main-menu">
       <a href="https://www.gildeopleidingen.nl"><img src="photos/logo.jpg" alt="logo" class="logo"></a>
       <div class="Line"></div>
-      <form method="post" class='formlout'>
-        <button name='login' class='login'>Login</button>
-        <button name='account' class='account'>Aanmelden</ion-icon></button>
-      </form>
+        <a href= "login/login.php"><button name='login' class='login'>Login</button></a>
+        <a href="login/create-account.php"><button name='account' class='account'>Aanmelden</ion-icon></button></a>
     </div>
     <div>
         <h1>De beste manier om Medische termen te oefenen</h1>

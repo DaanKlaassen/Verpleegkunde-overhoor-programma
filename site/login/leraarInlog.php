@@ -7,6 +7,10 @@
 </head>
 
 <body>
+<div class="main-menu">
+    <a href="https://www.gildeopleidingen.nl"><img src="../photos/logo.jpg" alt="logo" class="logo"></a>
+    <div class="Line"></div>
+</div>
   <div class="login">
     <div class="container">
       <form class="form" method="POST" id="login">
@@ -22,7 +26,7 @@
         </div>
         <button class="form__button" type="submit">Continue</button>
         <p class="form__text">
-            <a class="form__link" href="login.html" id="linkCreateAccount">Student login</a>
+            <a class="form__link" href="login.php" id="linkCreateAccount">Student login</a>
         </p>
         <p class="form__text">
           <a class="form__link" href="lerarenCreate-account.php" id="linkCreateAccount">Don't have an account? Create

@@ -22,22 +22,18 @@
     <div class ="bgTheamas">
       <table>
       <tr>
-        <td>
-            <a href="https://stackoverflow.com/questions/3337914/how-can-i-make-a-link-from-a-td-table-cell">
-              Test1
-            </a>
-        </td>
-        <td>Test2</td>
-        <td>Test3</td>
-        <td>Test4</td>
-        <td>Test5</td>
+        <td><a href="#">Test1</a></td>
+        <td><a href="#">Test1</a></td>
+        <td><a href="#">Test1</a></td>
+        <td><a href="#">Test1</a></td>
+        <td><a href="#">Test1</a></td>
       </tr>
       <tr>
-      <td>Test6</td>
-        <td>Test7</td>
-        <td>Test8</td>
-        <td>Test9</td>
-        <td>Test10</td>
+        <td><a href="#">Test1</a></td>
+        <td><a href="#">Test1</a></td>
+        <td><a href="#">Test1</a></td>
+        <td><a href="#">Test1</a></td>
+        <td><a href="#">Test1</a></td>
       </tr>
     </table>
     </div>

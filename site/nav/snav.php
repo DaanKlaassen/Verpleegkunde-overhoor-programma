@@ -1,21 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body class = "main">
-    
-</body>
-<aside>
-<ion-icon name="chevron-forward-outline" class="arrow"></ion-icon>
-<img src="../photos/logo.jpg" alt=""class="photo">
-<div class="info">
-    <ion-icon name="cash-outline"class="arrow"></ion-icon>
-</div>
-</aside>
-<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-</html>
+<nav>
+    <ul>
+    <li>
+    <ion-icon name="chevron-forward-outline" class="arrow"></ion-icon>
+    </li>
+    <li>
+    <a class="a" href="#"><img src="../photos/logo.jpg" alt=""class="photo"><span class="fas-photo">Gilde DevOps</span></a>
+    </li>
+    <div class="info">
+                <li>
+                <a class="a" href ="#"><ion-icon name="book-outline"class="arrow"></ion-icon>
+                <span class="fas">Woordenlijsten</span></a>
+                </li>
+                <li>
+                <a class="a" href ="#"><ion-icon name="clipboard-outline"class="arrow"></ion-icon>
+                <span class="fas">Resultaten</span></a>
+                </li>
+                <li>
+                <a class="a" href ="#"><ion-icon name="mail-outline"class="arrow"></ion-icon>
+                <span class="fas">Contact</span></a>
+                </li>
+                <li>
+                <a class="a" href ="#"><ion-icon name="cash-outline"class="arrow"></ion-icon>
+                <span class="fas">Shop</span></a>
+                </li>
+                <li>
+                <a class="a" href ="#"><img src="../photos/logo.jpg" alt=""class="photo"><span class= "fas-photo">User</span></a>
+                </li>
+    </div>
+    </ul>
+</nav>

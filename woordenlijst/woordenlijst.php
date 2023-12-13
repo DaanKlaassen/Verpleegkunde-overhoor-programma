@@ -23,7 +23,7 @@ echo "<h2>Voeg gegevens toe aan woordenlijst</h2>";
 echo "<form method='post' action='".$_SERVER['PHP_SELF']."'>";
 echo "<input type='hidden' name='woordenlijst_naam' value='$selectedNaam'>";
 echo "Woord: <input type='text' name='woord' required><br>";
-echo "Voorvoegsel: ";
+echo "Voor- achtervoegsel: ";
 echo "<select name='voor_achtervoegsel'>";
 echo "<option value=''>Nee</option>";
 echo "<option value='Voorvoegsel'>Voorvoegsel</option>";

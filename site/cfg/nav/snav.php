@@ -1,14 +1,14 @@
 <nav>
     <ul>
     <li>
-    <ion-icon name="chevron-forward-outline" class="arrow"></ion-icon>
+    <a href="../main/smain.php"><ion-icon name="chevron-forward-outline" class="arrow"></ion-icon></a>
     </li>
     <li>
     <a class="a" href="#"><img src="../photos/logo.jpg" alt=""class="photo"><span class="fas-photo">Gilde DevOps</span></a>
     </li>
     <div class="info">
                 <li>
-                <a class="a" href ="#"><ion-icon name="book-outline"class="arrow"></ion-icon>
+                <a class="a" href ="../list/list.php"><ion-icon name="book-outline"class="arrow"></ion-icon>
                 <span class="fas">Woordenlijsten</span></a>
                 </li>
                 <li>

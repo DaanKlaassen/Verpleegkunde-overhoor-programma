@@ -14,8 +14,6 @@
   <section>
     <!-- Main menu line on top of site -->
     <div class="main-menu">
-      
-      <div class="Line"></div>
       <a href=""><ion-icon name="add-circle-outline" class= "add"></ion-icon></a>
     </div>
       <!-- site code -->

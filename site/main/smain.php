@@ -16,7 +16,6 @@
   <section>
     <!-- Main menu/line on top of site -->
     <div class="main-menu">
-      <div class="Line"></div>
     </div>
     <!-- Middle site information -->
     <div class ="bgTheamas">

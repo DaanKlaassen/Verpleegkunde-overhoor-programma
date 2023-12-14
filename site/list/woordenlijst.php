@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["woordenlijst_naam"])) 
     $selectedNaam = $_GET["woordenlijst_naam"];
 } else {
     // Als er nog geen woordenlijst is gekozen, toon het formulier om er een te kiezen
-    echo "<a href='select_woordenlijst.php'>Kies eerst een woordenlijstnaam</a>";
+    echo "<a href='list.php'>Kies eerst een woordenlijstnaam</a>";
 }
 
 // Formulier om gegevens toe te voegen
@@ -114,6 +114,6 @@ function displayWoordenlijst($conn, $selectedNaam) {
 $conn->close();
 ?>
 
-<br><br><a href="select_woordenlijst.php">Terug</a>
+<br><br><a href="list.php">Terug</a>
 </body>
 </html>

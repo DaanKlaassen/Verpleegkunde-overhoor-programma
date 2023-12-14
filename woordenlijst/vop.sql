@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 28, 2023 at 02:43 PM
+-- Generation Time: Dec 13, 2023 at 09:14 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -42,8 +42,22 @@ CREATE TABLE `test` (
 
 INSERT INTO `test` (`id`, `woord`, `voor_achtervoegsel`, `betekenis`, `zin_voor`, `zin_achter`) VALUES
 (17, 'osteo', 'Voorvoegsel', 'bot', 'ik heb een', 'in mijn lichaam'),
-(18, 'iets anders', '', 'hallo', '', ''),
 (19, 'HHH', 'Achtervoegsel', '2+2=4', 'Da', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `test2`
+--
+
+CREATE TABLE `test2` (
+  `id` int(255) NOT NULL,
+  `woord` varchar(30) NOT NULL,
+  `voor_achtervoegsel` varchar(30) DEFAULT NULL,
+  `betekenis` varchar(50) DEFAULT NULL,
+  `zin_voor` varchar(100) DEFAULT NULL,
+  `zin_achter` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Indexes for dumped tables
@@ -56,6 +70,12 @@ ALTER TABLE `test`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `test2`
+--
+ALTER TABLE `test2`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -63,7 +83,13 @@ ALTER TABLE `test`
 -- AUTO_INCREMENT for table `test`
 --
 ALTER TABLE `test`
-  MODIFY `id` int(255) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(255) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
+--
+-- AUTO_INCREMENT for table `test2`
+--
+ALTER TABLE `test2`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

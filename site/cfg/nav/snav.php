@@ -16,7 +16,7 @@
                 <span class="fas">Resultaten</span></a>
                 </li>
                 <li>
-                <a class="a" href ="#"><ion-icon name="mail-outline"class="arrow"></ion-icon>
+                <a class="a" href ="../contact/contact.php"><ion-icon name="mail-outline"class="arrow"></ion-icon>
                 <span class="fas">Contact</span></a>
                 </li>
                 <li>

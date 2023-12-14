@@ -22,18 +22,18 @@
     <div class ="bgTheamas">
       <table>
       <tr>
-        <td><a href="#">Test1</a></td>
-        <td><a href="#">Test1</a></td>
-        <td><a href="#">Test1</a></td>
-        <td><a href="#">Test1</a></td>
-        <td><a href="#">Test1</a></td>
+        <td><a href="#">WIP</a></td>
+        <td><a href="#">WIP</a></td>
+        <td><a href="#">WIP</a></td>
+        <td><a href="#">WIP</a></td>
+        <td><a href="#">WIP</a></td>
       </tr>
       <tr>
-        <td><a href="#">Test1</a></td>
-        <td><a href="#">Test1</a></td>
-        <td><a href="#">Test1</a></td>
-        <td><a href="#">Test1</a></td>
-        <td><a href="#">Test1</a></td>
+        <td><a href="#">WIP</a></td>
+        <td><a href="#">WIP</a></td>
+        <td><a href="#">WIP</a></td>
+        <td><a href="#">WIP</a></td>
+        <td><a href="#">WIP</a></td>
       </tr>
     </table>
     </div>

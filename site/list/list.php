@@ -7,6 +7,7 @@
   <link rel="icon" type="image/x-icon" href="../img/icon.ico">
   <title>GildeDEVops</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="list.js"></script>
 </head>
 
 <?php
@@ -20,11 +21,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["nieuwe_tabel_naam"])) 
 }
 
 function createTable($conn, $tableName) {
+     // Vervang spaties door underscores in de tabelnaam
+    $tableName = str_replace(' ', '_', $tableName);
+
+    // Controleer of de tabelnaam alleen alfanumerieke tekens en spaties bevat
+    if (!preg_match('/^[a-zA-Z0-9_ ]+$/', $tableName)) {
+        // Toon een JavaScript pop-up melding als de tabelnaam speciale tekens bevat
+        echo "<script>showErrorMessage('De tabelnaam mag alleen alfanumerieke tekens en spaties bevatten. Kies een andere naam.')</script>";
+        return;
+    }
+
     // Controleer of de tabel al bestaat
     $checkTableSql = "SHOW TABLES LIKE '$tableName'";
     $checkTableResult = $conn->query($checkTableSql);
 
-    if ($checkTableResult->num_rows == 0) {
+    if ($checkTableResult->num_rows > 0) {
+        // De tabel bestaat al, toon een JavaScript pop-up melding
+        echo "<script>showErrorMessage('De tabelnaam $tableName bestaat al. Kies een andere naam.')</script>";
+    } else {
         // De tabel bestaat nog niet, maak de tabel aan
         $createTableSql = "CREATE TABLE $tableName (
                             id INT(255) AUTO_INCREMENT PRIMARY KEY,
@@ -45,6 +59,7 @@ function createTable($conn, $tableName) {
     }
 }
 
+
 // Haal bestaande tabellen op
 $showTablesSql = "SHOW TABLES";
 $tablesResult = $conn->query($showTablesSql);
@@ -55,20 +70,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["search"])) {
     $showTablesSql = "SHOW TABLES LIKE '%$searchTerm%'";
     $tablesResult = $conn->query($showTablesSql);
 }
+
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["search"])) {
+    $searchTerm = $_POST["search"];
+}
 ?>
 
 <body>
   <section>
     <!-- Main menu line on top of the site -->
     <div class="main-menu">
-<<<<<<< Updated upstream
-      <a href=""><ion-icon name="add-circle-outline" class= "add"></ion-icon></a>
-=======
       <a href=""><ion-icon name="add-circle-outline" class="add"></ion-icon></a>
->>>>>>> Stashed changes
     </div>
 
-    <!-- Nieuwe tabelnaam input -->
+<!-- Nieuwe tabelnaam input -->
 <form action="" method="post" class="new-table">
     <input type="text" name="nieuwe_tabel_naam" id="" class="search" placeholder="Nieuwe tabelnaam">
 </form>
@@ -77,11 +92,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["search"])) {
     <!-- Site code -->
     <div class="bgTheamas">
       <form action="" method="post" class="search-form">
-        <input type="text" name="search" class="search" placeholder="Zoek tabel">
+        <input type="text" name="search" id="searchInput" class="search" placeholder="Zoek tabel">
         <button type="submit"><ion-icon name="search-outline" class="submit"></ion-icon></button>
       </form>
 
-      <div class="Table">
+      <div id="searchResults" class="Table">
         <?php
         // Toon de bestaande tabellen in een lijst
         while ($row = $tablesResult->fetch_row()) {
@@ -91,7 +106,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["search"])) {
           $rowCount = $countRowsResult->fetch_assoc()['count'];
 
           // Voeg een link toe rondom de tabelrij
-          echo "<a href='woordenlijst.php?woordenlijst_naam=$tableName'><li class='bg'>$tableName<br> $rowCount definities </li></a>";
+          echo "<a href='woordenlijst.php?woordenlijst_naam=$tableName'><li class='bg'> &nbsp; $tableName<br> &nbsp; $rowCount definities </li></a>";
         }
         ?>
       </div>

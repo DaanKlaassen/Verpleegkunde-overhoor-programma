@@ -1,7 +1,14 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>bruh</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Woordenlijst beheer</title>
+    <link rel="stylesheet" href="list2.css">
+    <script>
+    function confirmDelete() {
+            return confirm("Weet je zeker dat je de gehele tabel wilt verwijderen?");
+        }
+    </script>
 <body>
 
 <?php
@@ -18,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["woordenlijst_naam"])) 
 }
 
 // Formulier om gegevens toe te voegen
-echo "<h2>Voeg gegevens toe aan woordenlijst</h2>";
+echo "<div class=foam><h3>Voeg gegevens toe aan woordenlijst</h3>";
 echo "<form method='post' action='".$_SERVER['PHP_SELF']."'>";
 echo "<input type='hidden' name='woordenlijst_naam' value='$selectedNaam'>";
 echo "Woord: <input type='text' name='woord' required><br>";
@@ -32,7 +39,7 @@ echo "Betekenis: <input type='text' name='betekenis' required><br>";
 echo "Zin Voor: <input type='text' name='zin_voor'><br>";
 echo "Zin Achter: <input type='text' name='zin_achter'><br>";
 echo "<input type='submit' value='Voeg toe'>";
-echo "</form>";
+echo "</form></div>";
 
 // Toon woordenlijst
 displayWoordenlijst($conn, $selectedNaam);
@@ -109,6 +116,28 @@ function displayWoordenlijst($conn, $selectedNaam) {
         echo "<br>(Nog) geen resultaten gevonden voor woordenlijst: $selectedNaam";
     }
 }
+
+/// Knop om de gehele tabel te verwijderen met bevestiging
+echo "<form method='post' action='".$_SERVER['PHP_SELF']."' onsubmit='return confirmDelete()'>";
+echo "<input type='hidden' name='woordenlijst_naam' value='$selectedNaam'>";
+echo "<input type='submit' name='delete_whole_table' value='Verwijder gehele tabel'>";
+echo "</form>";
+
+// Gehele tabel verwijderen
+if (isset($_POST["delete_whole_table"])) {
+    $deleteWholeTableSql = "DROP TABLE $selectedNaam";
+
+    if ($conn->query($deleteWholeTableSql) === TRUE) {
+        echo "Gehele tabel verwijderd!";
+        
+        // Na verwijdering, stuur de gebruiker naar list.php
+        header("Location: list.php");
+        exit();
+    } else {
+        echo "Error: " . $deleteWholeTableSql . "<br>" . $conn->error;
+    }
+}
+
 
 // Sluit de verbinding
 $conn->close();

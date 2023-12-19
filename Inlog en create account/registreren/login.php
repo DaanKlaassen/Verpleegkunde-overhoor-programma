@@ -25,7 +25,7 @@
           <a href="#" class="form__link">Forgot your password?</a>
         </p>
         <p class="form__text">
-          <a class="form__link" href="./create-account.html" id="linkCreateAccount">Don't have an account? Create
+          <a class="form__link" href="create-account.php" id="linkCreateAccount">Don't have an account? Create
             account</a>
         </p>
       </form>

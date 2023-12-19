@@ -9,7 +9,6 @@
 <body>
 <div class="main-menu">
     <a href="https://www.gildeopleidingen.nl"><img src="../photos/logo.jpg" alt="logo" class="logo"></a>
-    <div class="Line"></div>
 </div>
   <div class="login">
     <div class="container">
@@ -27,7 +26,7 @@
             placeholder="Password" />
           <div class="form__input-error-message"></div>
           <div class="form__input-group">
-            <input type="password" class="form__input" id="confirmPassword" autofocus placeholder="Confirm password" />
+            <input type="password" class="form__input" id="confirmPassword" name="confirmPassword" autofocus placeholder="Confirm password" />
             <div class="form__input-error-message"></div>
           </div>
         </div>
@@ -38,7 +37,6 @@
       </form>
     </div>
   </div>
-  <script src="src/client/js/main.js"></script>
 </body>
 
 </html>

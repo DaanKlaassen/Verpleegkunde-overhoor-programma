@@ -9,7 +9,7 @@
 <body>
   <div class="login">
     <div class="container">
-      <form class="form form--hidden" id="createAccount" action="register.php" method="post">
+      <form class="form form--hidden" id="createAccount">
         <h1 class="form__title">Create Account</h1>
         <div class="form__message form__message--error"></div>
         <div class="form__input-group">

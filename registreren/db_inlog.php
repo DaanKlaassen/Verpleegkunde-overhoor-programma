@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Verify password
         if (password_verify($password, $row["password"])) {
-            echo "Login successful!";
+            header('Location: ../mains/main.php');
             // You can redirect to another page or set a session variable for authentication.
         } else {
             echo "Incorrect password";

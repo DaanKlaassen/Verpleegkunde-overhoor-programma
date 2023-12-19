@@ -121,6 +121,15 @@ tr{
     border-radius: 40px;
 }
 
+.new-search {
+    border: solid 0.5px black;
+    position: absolute;
+    right: 5%;
+    width: 15%;
+    top: 3%;
+    border-radius: 40px;
+}
+
 .submit {
     position: absolute;
     right: 5%;
@@ -145,22 +154,36 @@ tr{
     border: solid 0.5px black;
     width: 20%;
     border-radius: 40px;
-    margin-right: 1%; /* Voeg deze regel toe voor wat ruimte tussen de input en de knop */
+    margin-right: 1%; 
     margin-top: -1%;
-}     
+}
 
-        @media only screen and (max-width: 768px) {
-            .logo {
-                width: 18%;
-                height: 60%;
-                top: 20%;
-                left: 0px;
-                position: absolute;
-                size-adjust: 20%;
-                display: flex;
-                background: transparent;
-                border: 1px solid orange;
-                backdrop-filter: blur(70px);
-                border-radius: 40px;
-            }
-        }
+@media only screen and (max-width: 1300px){
+    .new-search {
+        right: 10%;
+    }
+}
+
+
+@media only screen and (max-width: 768px) {
+    .logo {
+        width: 18%;
+        height: 60%;
+        top: 20%;
+        left: 0px;
+        position: absolute;
+        size-adjust: 20%;
+        display: flex;
+        background: transparent;
+        border: 1px solid orange;
+        backdrop-filter: blur(70px);
+        border-radius: 40px;
+    }
+
+}
+
+@media only screen and (max-width: 600px) {
+    .new-search {
+        right: 15%;
+    }
+}

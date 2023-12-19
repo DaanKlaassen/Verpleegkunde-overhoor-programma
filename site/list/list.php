@@ -45,8 +45,8 @@ function createTable($conn, $tableName) {
                             woord VARCHAR(30) NOT NULL,
                             voor_achtervoegsel VARCHAR(30),
                             betekenis VARCHAR(50),
-                            zin_voor VARCHAR(100),
-                            zin_achter VARCHAR(100)
+                            zin_voor VARCHAR(200),
+                            zin_achter VARCHAR(200)
                         )";
 
         if ($conn->query($createTableSql) === TRUE) {
@@ -78,15 +78,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["search"])) {
 
 <body>
   <section>
-    <!-- Main menu line on top of the site -->
-    <div class="main-menu">
-      <a href=""><ion-icon name="add-circle-outline" class="add"></ion-icon></a>
-    </div>
+   <!-- Main menu line on top of the site -->
+<div class="main-menu">
+  <a href="#" onclick="document.getElementById('newTableForm').submit();">
+    <ion-icon name="add-circle-outline" class="add"></ion-icon>
+  </a>
+</div>
 
 <!-- Nieuwe tabelnaam input -->
-<form action="" method="post" class="new-table">
-    <input type="text" name="nieuwe_tabel_naam" id="" class="search" placeholder="Nieuwe tabelnaam">
+<form action="" method="post" class="new-table" id="newTableForm">
+  <input type="text" name="nieuwe_tabel_naam" id="" class="new-search" placeholder="Nieuwe tabelnaam">
 </form>
+
 
 
     <!-- Site code -->

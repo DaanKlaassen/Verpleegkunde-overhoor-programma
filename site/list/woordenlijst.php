@@ -91,12 +91,12 @@ function displayWoordenlijst($conn, $selectedNaam) {
 
     if ($result->num_rows > 0) {
         echo "<h2>Woordenlijst voor $selectedNaam</h2>";
-        echo "<table border='1'>
+        echo "<table border='1' class=tabel>
                 <tr>
                     <th>Woord</th><th>Voorvoegsel</th>
                     <th>Betekenis</th>
-                    <th>Zin Voor</th>
-                    <th>Zin Achter</th>
+                    <th>Zin<br>Voor</th>
+                    <th>Zin<br>Achter</th>
                     <th>Actie</th>
                 </tr>";
 
@@ -107,7 +107,7 @@ function displayWoordenlijst($conn, $selectedNaam) {
                     <td>".$row["betekenis"]."</td>
                     <td>".$row["zin_voor"]."</td>
                     <td>".$row["zin_achter"]."</td>
-                    <td><a href='".$_SERVER['PHP_SELF']."?delete=".$row["id"]."&woordenlijst_naam=$selectedNaam'>Verwijder</a></td>
+                    <td><a href='".$_SERVER['PHP_SELF']."?delete=".$row["id"]."&woordenlijst_naam=$selectedNaam' class=verwijder>Verwijder</a></td>
                 </tr>";
         }
 
@@ -119,8 +119,8 @@ function displayWoordenlijst($conn, $selectedNaam) {
 
 /// Knop om de gehele tabel te verwijderen met bevestiging
 echo "<form method='post' action='".$_SERVER['PHP_SELF']."' onsubmit='return confirmDelete()'>";
-echo "<input type='hidden' name='woordenlijst_naam' value='$selectedNaam'>";
-echo "<input type='submit' name='delete_whole_table' value='Verwijder gehele tabel'>";
+echo "<input type='hidden' name='woordenlijst_naam' value='$selectedNaam' class=table_delete>";
+echo "<input type='submit' name='delete_whole_table' value='Verwijder gehele tabel' class=table_delete>";
 echo "</form>";
 
 // Gehele tabel verwijderen
@@ -143,6 +143,6 @@ if (isset($_POST["delete_whole_table"])) {
 $conn->close();
 ?>
 
-<br><br><a href="list.php">Terug</a>
+<br><br><a href="list.php" class=terug>Terug naar woordenlijsten</a>
 </body>
 </html>

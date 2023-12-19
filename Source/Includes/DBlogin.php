@@ -1,9 +1,11 @@
 <?php
-// Verbind met de database
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "VOP";
+// DB Configuration
+$servername = "62.72.37.103";
+$username = "u556675066_root";
+$password = "tDa4Mpa!sE6S0wYW8";
+$dbname = "u556675066_vop";
+
+// Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 // Controleer de verbinding

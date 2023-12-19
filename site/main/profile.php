@@ -23,7 +23,7 @@
         <div class="userinfotop">
 
             <div class="profilepicture">
-                <img src="../photos/profilepicture1.jpg" alt="profilepicture" class="profilepicture">
+                <img src="../photos/standardprofilepicture.jpg" alt="profilepicture" class="profilepicture">
             </div>
 
             <div class="userinfoname">
@@ -35,16 +35,32 @@
         <div class="panel1">
 
             <div class="streakbox">
+            <h1>Streak</h1>
+            <p> 7 </p>
             <ion-icon name="flash"></ion-icon>
             </div>
             <div class="leaderboardbox">
+            <h1>Leaderboard</h1>
+            <p> #1 </p>
             <ion-icon name="trophy"></ion-icon>
             </div>
             <div class="puntenbox">
+            <h1>Punten</h1>
+            <p> 210 </p>
             <ion-icon name="logo-bitcoin"></ion-icon>
             </div>
 
+            <div class="xpbar">
+            <h1> Level 9 </h1>
+            </div>
+
+            <div class="userinfo">
+        
+            </div>
+
         </div>
+
+
 
     
 

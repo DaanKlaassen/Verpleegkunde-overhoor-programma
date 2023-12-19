@@ -1,0 +1,83 @@
+body {
+    font-family: Arial, sans-serif;
+    background-repeat: no-repeat;
+    width: auto;
+    height: auto;
+    background: linear-gradient(180deg, #B4B4B4 3.29%, #A4D7FB 3.3%, #086FB9 100%);
+   }
+
+   .login {
+    max-width: 350px;
+    margin: 100px auto;
+    padding: 63px;
+    background-color: #fff;
+   }
+   .logo {
+    width: 18%;
+    height: 85%;
+    top: 5%;
+    left: 0px;
+    position: relative;
+    size-adjust: 20%;
+    display: flex;
+    background-color: white;
+}
+
+   .Line{
+    background-color: #404C76;
+    width: 100%;
+    height: 10%;
+    position: absolute;
+    }
+    .main-menu {
+        background-position: center;
+        background-size: cover;
+        width: 101%;
+        height: 10%;
+        position: relative;
+        background-color: white;
+        margin-top: -0.5%;
+        margin-left: -0.5%;
+    }
+
+   
+   .form__title {
+    text-align: center;
+    margin-bottom: 20px;
+   }
+   
+   .form__input-group {
+    margin-bottom: 20px;
+   }
+   
+   .form__input {
+    width: 93%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    font-size: 14px;
+   }
+   
+   .form__button {
+    width: 100%;
+    padding: 10px;
+    background-color: #2596be;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 14px;
+   }
+   
+   .form__button:hover {
+    background-color: #2d6aa7;
+   }
+   
+   .form__link {
+    color: #6c7a89;
+    text-decoration: none;
+   }
+   
+   .form__link:hover {
+    color: #5e6e7e;
+   }

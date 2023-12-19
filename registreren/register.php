@@ -22,10 +22,10 @@ function clean_input($data) {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = clean_input($_POST["username"]);
     $email = clean_input($_POST["email"]);
-    $password = password_hash($_POST["password"], PASSWORD_DEFAULT); // Hash the password for security
+    $password1 = password_hash($_POST["password"], PASSWORD_DEFAULT); // Hash the password for security
 
     // Insert user data into the database
-    $sql = "INSERT INTO `inlog&register` (username, email, password) VALUES ('$username', '$email', '$password')";
+    $sql = "INSERT INTO `inlog&register` (username, email, password) VALUES ('$username', '$email', '$password1')";
 
     if ($conn->query($sql) === TRUE) {
         echo "Registration successful!";

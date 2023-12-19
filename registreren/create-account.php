@@ -1,3 +1,4 @@
+<?php include "register.php"?>
 <!DOCTYPE html>
 <html lang="en">
 

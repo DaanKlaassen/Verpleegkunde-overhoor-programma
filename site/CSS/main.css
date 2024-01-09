@@ -34,6 +34,12 @@ section {
     border-bottom:5px #8B643D;
     border-bottom-style: solid;
 }
+.game{
+    width: 90%;
+    height: 85%;
+    margin-left: 5%;
+    margin-top: 5%;
+}
 
 
 

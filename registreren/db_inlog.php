@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST["password"];
 
     // Retrieve user data from the database
-    $sql = "SELECT * FROM `inlog&register` WHERE username = '$username'";
+    $sql = "SELECT * FROM `inlog&register` WHERE username = ($username, password )";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Verify password
         if (password_verify($password, $row["password"])) {
-            header('Location: ../mains/main.php');
+            echo "Login successful!";
             // You can redirect to another page or set a session variable for authentication.
         } else {
             echo "Incorrect password";

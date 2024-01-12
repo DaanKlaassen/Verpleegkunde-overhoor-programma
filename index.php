@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="Source/CSS/index.css">
   <link rel="stylesheet" href="Source/CSS/nav.css">
   <link rel="icon" type="image/x-icon" href="Assets/Icons/icon.ico">
+<!-- javascript -->
+<script src="source/js/openwindow.js"></script>
 
 <!-- ionicons -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
@@ -39,7 +41,27 @@
     <span class="listbox-description">Een woordenlijst over de meerdere spiergroepen van het hart</span>
     <div class="listbox-line"></div>
     <span class="listbox-amount">12 woorden</span>
-    <button class="listbox-startbutton">Start</button>
+    <button class="listbox-startbutton" onclick="openPopup()">Start</button>
+    <div class="popup" id="myPopup">
+        <span class="popupclose" onclick="closePopup()">&times;</span>
+        <!-- Content of your popup goes here -->
+        <p>Hoe wil je oefenen?</p>
+
+        <div class="gameselection">
+
+        <div class="flitskaartbutton">
+          <a href="#"> <img src="assets/images/flitskaarten.png" alt="flitskaarten"> </a>
+          <p>Flitskaarten</p>
+        </div>
+
+        <div class="woordzoekerbutton">
+          <a href="#"> <img src="assets/images/woordzoekericon.png" alt="woordzoeker"> </a>
+          <p>Woordzoeker</p>
+        </div>
+
+        </div>
+
+    </div>
   </div>
 
 </div>

@@ -4,13 +4,13 @@
 
 <head>
 <meta content="width=device-width" name="viewport">
-  <link rel="stylesheet" href="../CSS/main.css">
-  <link rel="stylesheet" href="../CSS/nav.css">
-  <link rel="icon" type="image/x-icon" href="../img/icon.ico">
+  <link rel="stylesheet" href="Source/CSS/main.css">
+  <link rel="stylesheet" href="Source/CSS/nav.css">
+  <link rel="icon" type="image/x-icon" href="Assets/icons/icon.ico">
   <title>GildeDEVops</title>
 </head>
 <!--nav Bar -->
-<?php include "../cfg/nav/snav.php"?>
+<?php include "Source/Includes/snav.php"?>
 <!--nav Bar -->
 <body>
   <section>

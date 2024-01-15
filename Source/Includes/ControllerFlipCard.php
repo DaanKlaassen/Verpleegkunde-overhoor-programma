@@ -25,8 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Save the updated $id in the session
     $_SESSION['id'] = $id;
 }
-$name = $_SESSION['wordenlijst'];
-$query = "SELECT woord, betekenis FROM. $name .WHERE ID = $id";
+$query = "SELECT woord, betekenis FROM test1234 WHERE ID = $id";
 $stmt = $pdo->query($query);
 
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {

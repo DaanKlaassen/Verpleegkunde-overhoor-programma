@@ -6,7 +6,7 @@
 <body>
 
 <?php
-include "DBlogin.php";
+include "source/includes/DBlogin.php";
 
 // Haal woordenlijst op
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["woordenlijst_naam"])) {

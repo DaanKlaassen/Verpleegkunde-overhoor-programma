@@ -1,3 +1,20 @@
+<?php
+// Include the database connection file
+include "source/includes/DBlogin.php";
+
+// Fetch all table names from the database
+$result = $conn->query("SHOW TABLES");
+
+// Initialize an empty array to store table names
+$tables = [];
+
+// Fetch each row and store the table name in the array
+while ($row = $result->fetch_assoc()) {
+    // Use the first value in the associative array (the table name)
+    $tables[] = reset($row);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,8 +32,7 @@
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
     <?php include "source/includes/snav.php"?>
-
-  <title>GildeDevOps</title>
+    <title>GildeDevOps</title>
   
 </head>
 
@@ -27,44 +43,54 @@
 </div>
 
 <div class="topbody">
-<h1> Welkom terug, Max</h1>
-<h2> Er staan 4 Woordenlijsten voor je klaar</h2>
+    <h1> Welkom terug, Max</h1>
+    <h2> Er staan <?php echo count($tables); ?> Woordenlijsten voor je klaar</h2>
 </div>
 
 <div class="mainbody">
 
-  <div class="testbox1">
-    <span class="listbox-title">Cardiology IV</span>
-    <br>
-    <span class="listbox-progress">Niet gestart</span>
-    <div class="listbox-line"></div>
-    <span class="listbox-description">Een woordenlijst over de meerdere spiergroepen van het hart</span>
-    <div class="listbox-line"></div>
-    <span class="listbox-amount">12 woorden</span>
-    <button class="listbox-startbutton" onclick="openPopup()">Start</button>   
-  </div>
+<?php
+// Loop through each table and generate a box for each word list
+foreach ($tables as $table) {
+    // Fetch the number of rows in each table (number of words)
+    $stmt = $conn->prepare("SELECT COUNT(*) FROM `$table`");
+    $stmt->execute();
+    $stmt->bind_result($wordCount);
+    $stmt->fetch();
+    
+    // Close the result set before the next iteration
+    $stmt->close();
 
+    // Generate the HTML for each word list box
+    echo "<div class='testbox1'>";
+    echo "<span class='listbox-title'>$table</span><br>";
+    echo "<span class='listbox-progress'>Niet gestart</span>";
+    echo "<div class='listbox-line'></div>";
+    echo "<span class='listbox-description'>Een woordenlijst over ...</span>";
+    echo "<div class='listbox-line'></div>";
+    echo "<span class='listbox-amount'>$wordCount woorden</span>";
+    echo "<button class='listbox-startbutton' onclick='openPopup()'>Start</button>";
+    echo "</div>";
+}
+?>
 
-  <div class="popup" id="myPopup">
-      <span class="popupclose" onclick="closePopup()">&times;</span>
-      <!-- popup content -->
-      <p>Hoe wil je oefenen?</p>
+<div class="popup" id="myPopup">
+    <span class="popupclose" onclick="closePopup()">&times;</span>
+    <!-- popup content -->
+    <p>Hoe wil je oefenen?</p>
 
-      <div class="gameselection">
-
+    <div class="gameselection">
         <div class="flitskaartbutton">
-          <a href="#"> <img src="assets/images/flitskaarten.png" alt="flitskaarten"> </a>
-          <p>Flitskaarten</p>
+            <a href="#"> <img src="assets/images/flitskaarten.png" alt="flitskaarten"> </a>
+            <p>Flitskaarten</p>
         </div>
 
         <div class="woordzoekerbutton">
-          <a href="#"> <img src="assets/images/woordzoekericon.png" alt="woordzoeker"> </a>
-          <p>Woordzoeker</p>
+            <a href="#"> <img src="assets/images/woordzoekericon.png" alt="woordzoeker"> </a>
+            <p>Woordzoeker</p>
         </div>
-        
-      </div>
-  </div>
-
+    </div>
+</div>
 
 </body>
 

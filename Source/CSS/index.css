@@ -56,9 +56,10 @@ width: 100%;
 }
 
 .mainbody {
+    display: flex;
+    gap: 40px;
     background-color: white;
     border-radius: 20px;
-    display: block;
     position: absolute;
     left: 0;
     right: 0;
@@ -77,6 +78,9 @@ width: 100%;
     left: 30px;
     top: 30px;
     text-align: center;
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center; /* Center children vertically */
+    align-items: center; /* Center children horizontally */
 }
 
 .listbox-line{

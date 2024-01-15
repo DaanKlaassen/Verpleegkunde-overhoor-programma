@@ -1,5 +1,5 @@
 <?php
-include "DBlogin.php";
+include "source/includes/DBlogin.php";
 
 // Maak nieuwe tabel (woordenlijst)
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["nieuwe_tabel_naam"])) {

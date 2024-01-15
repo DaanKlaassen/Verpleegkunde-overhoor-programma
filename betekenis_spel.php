@@ -13,7 +13,7 @@
 </head>
 <body>
   <?php
-    include "DBlogin.php"; // Zorg ervoor dat je de database-verbinding hebt
+    include "source/includes/DBlogin.php"; // Zorg ervoor dat je de database-verbinding hebt
 
     $selectedTable = $_GET["selected_table"] ?? '';
 

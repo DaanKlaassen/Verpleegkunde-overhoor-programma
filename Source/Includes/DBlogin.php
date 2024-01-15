@@ -1,12 +1,11 @@
 <?php
 // DB Configuration
 $host = "localhost";
-$dbname = "vop";
 $username = "root";
 $password = "";
+$database = "vop";
 
-// Create connection
-$conn = new mysqli($host, $dbname, $username, $password);
+$conn = new mysqli($host, $username, $password, $database);
 
 // Controleer de verbinding
 if ($conn->connect_error) {

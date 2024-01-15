@@ -81,7 +81,7 @@ foreach ($tables as $table) {
 
     <div class="gameselection">
         <div class="flitskaartbutton">
-            <a href="#"> <img src="assets/images/flitskaarten.png" alt="flitskaarten"> </a>
+            <a href="flipcard.php"> <img src="assets/images/flitskaarten.png" alt="flitskaarten"> </a>
             <p>Flitskaarten</p>
         </div>
 

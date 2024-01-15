@@ -1,9 +1,9 @@
 <?php
 // DB Configuration
-$servername = "62.72.37.103";
-$username = "u556675066_root";
-$password = "tDa4Mpa!sE6S0wYW8";
-$dbname = "u556675066_vop";
+$host = "localhost";
+$dbname = "vop";
+$username = "root";
+$password = "";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);

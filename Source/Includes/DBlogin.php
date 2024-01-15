@@ -6,7 +6,7 @@ $username = "root";
 $password = "";
 
 // Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($host, $dbname, $username, $password);
 
 // Controleer de verbinding
 if ($conn->connect_error) {

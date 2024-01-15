@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+    background-color: white;
+    font-family: pop;
+    color: white;
+    margin-top: 3%;
+    margin-left: 40%;
+}
+
+.contener {
+    height: 300px;
+    width: 250px;
+    perspective: 800px;
+}
+
+.contener:hover > .card {
+    cursor: pointer;
+    transform: rotateY(180deg); /* Remove the quotes here */
+}
+
+.card {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    transition: 1000ms;
+    transform-style: preserve-3d;
+}
+
+.front, .back {
+    height: 100%;
+    width: 100%;
+    border-radius: 2rem;
+    box-shadow: 0 0 5px 2px rgba(50, 50, 50, 0.25);
+    position: absolute;
+    backface-visibility: hidden;
+    flex-direction: column;
+}
+
+.front {
+    background-color: #404C76;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.back {
+    background-color: #404C76;
+    transform: rotateY(180deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+form{
+    position:  absolute;
+    top: 70%;
+    right: 47%;
+    border-radius: 40px;
+    border: solid black 3px;
+    width: 100px;
+    height: 26px;
+}
+.buttons{
+    border: none;
+    background-color: none;
+    margin-left: 10%;
+    margin-top: 0%;
+}
+.buttons:hover{
+    border: none;
+    background-color: #404C76;
+    cursor: pointer;
+
+}
+.prievie{
+left: 2%;
+}
+.next{
+right: 2%;
+}

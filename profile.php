@@ -4,13 +4,13 @@
 
 <head>
 <meta content="width=device-width" name="viewport">
-  <link rel="stylesheet" href="../CSS/profile.css">
-  <link rel="stylesheet" href="../CSS/nav.css">
-  <link rel="icon" type="image/x-icon" href="../img/icon.ico">
+  <link rel="stylesheet" href="source/CSS/profile.css">
+  <link rel="stylesheet" href="source/CSS/nav.css">
+  <link rel="icon" type="image/x-icon" href="assets/icons.ico">
   <title>GildeDEVops</title>
 </head>
 <!--nav Bar -->
-<?php include "../cfg/nav/snav.php"?>
+<?php include "source/includes/snav.php"?>
 <!--nav Bar -->
 <body>
   <section>
@@ -23,7 +23,7 @@
         <div class="userinfotop">
 
             <div class="profilepicture">
-                <img src="../photos/standardprofilepicture.jpg" alt="profilepicture" class="profilepicture">
+                <img src="assets/images/standardprofilepicture.jpg" alt="profilepicture" class="profilepicture">
             </div>
 
             <div class="userinfoname">

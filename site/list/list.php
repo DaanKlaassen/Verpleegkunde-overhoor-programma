@@ -87,7 +87,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["search"])) {
 
 <!-- Nieuwe tabelnaam input -->
 <form action="" method="post" class="new-table" id="newTableForm">
-  <input type="text" name="nieuwe_tabel_naam" id="" class="new-search" placeholder="Nieuwe tabelnaam">
+  <input type="text" name="nieuwe_tabel_naam" id="" class="new-search" placeholder=" Nieuwe tabelnaam">
 </form>
 
 
@@ -95,7 +95,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["search"])) {
     <!-- Site code -->
     <div class="bgTheamas">
       <form action="" method="post" class="search-form">
-        <input type="text" name="search" id="searchInput" class="search" placeholder="Zoek tabel">
+        <input type="text" name="search" id="searchInput" class="search" placeholder=" Zoek tabel">
         <button type="submit"><ion-icon name="search-outline" class="submit"></ion-icon></button>
       </form>
 

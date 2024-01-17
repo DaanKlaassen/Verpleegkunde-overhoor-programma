@@ -15,5 +15,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["search"])) {
         // Output the search results
         echo "<a href='woordenlijst.php?woordenlijst_naam=$tableName'><li class='bg'>$tableName<br> $rowCount definities </li></a>";
     }
+    else {
+        echo "<p>No matching tables found.</p>";
+    }
 }
 ?>

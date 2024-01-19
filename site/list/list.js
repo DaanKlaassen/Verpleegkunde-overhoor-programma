@@ -29,3 +29,11 @@ addIconLink.addEventListener('click', function (event) {
 function showErrorMessage(message) {
     alert(message);
 }
+
+function confirmDelete() {
+    return confirm("Weet je zeker dat je de tabel wilt verwijderen?");
+}
+
+function confirmDeleteRecord() {
+    return confirm("Weet je zeker dat je dit woord wilt verwijderen?");
+}        

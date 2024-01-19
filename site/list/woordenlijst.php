@@ -4,11 +4,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Woordenlijst beheer</title>
     <link rel="stylesheet" href="list2.css">
-    <script>
-    function confirmDelete() {
-            return confirm("Weet je zeker dat je de gehele tabel wilt verwijderen?");
-        }
-    </script>
+    <script src="list.js"></script>
+</head>
 <body>
 
 <?php
@@ -24,6 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["woordenlijst_naam"])) 
     echo "<a href='list.php'>Kies eerst een woordenlijstnaam</a>";
 }
 
+
 // Formulier om gegevens toe te voegen
 echo "<div class=foam><h3>Voeg gegevens toe aan woordenlijst</h3>";
 echo "<form method='post' action='".$_SERVER['PHP_SELF']."'>";
@@ -38,8 +36,9 @@ echo "</select><br>";
 echo "Betekenis: <input type='text' name='betekenis' required><br>";
 echo "Zin Voor: <input type='text' name='zin_voor'><br>";
 echo "Zin Achter: <input type='text' name='zin_achter'><br>";
-echo "<input type='submit' value='Voeg toe'>";
+echo "<input type='submit' name='add' value='Voeg toe'>";
 echo "</form></div>";
+echo "<a href=\"list.php\" class=\"terug\">Terug naar woordenlijsten</a>";
 
 // Toon woordenlijst
 displayWoordenlijst($conn, $selectedNaam);
@@ -57,10 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["woordenlijst_naam"]) &
     $insertSql = "INSERT INTO $naam (woord, voor_achtervoegsel, betekenis, zin_voor, zin_achter) VALUES ('$woord', '$voorvoegsel', '$betekenis', '$zinVoor', '$zinAchter')";
 
     if ($conn->query($insertSql) === TRUE) {
-        echo "Nieuwe record toegevoegd!";
-        
-        // Na toevoeging, stuur de gebruiker naar een andere pagina om het formulier niet opnieuw te verzenden
-        header("Location: ".$_SERVER['PHP_SELF']."?woordenlijst_naam=".$selectedNaam);
+        echo '<script>window.onload = function() { window.location.href = "'.$_SERVER['PHP_SELF'].'?woordenlijst_naam='.$selectedNaam.'"; }</script>';
         exit();
     } else {
         echo "Error: " . $insertSql . "<br>" . $conn->error;
@@ -73,15 +69,80 @@ if (isset($_GET["delete"])) {
     $deleteSql = "DELETE FROM $selectedNaam WHERE id = $deleteId";
 
     if ($conn->query($deleteSql) === TRUE) {
-        echo "Record verwijderd!";
-        
-        // Na verwijdering, stuur de gebruiker naar een andere pagina om het formulier niet opnieuw te verzenden
-        header("Location: ".$_SERVER['PHP_SELF']."?woordenlijst_naam=".$selectedNaam);
+        echo '<script>window.onload = function() { window.location.href = "'.$_SERVER['PHP_SELF'].'?woordenlijst_naam='.$selectedNaam.'"; }</script>';
         exit();
     } else {
         echo "Error: " . $deleteSql . "<br>" . $conn->error;
     }
 }
+
+
+// Gegevens bewerken
+if (isset($_GET["edit"])) {
+    $editId = $_GET["edit"];
+    $editSql = "SELECT * FROM $selectedNaam WHERE id = $editId";
+    $editResult = $conn->query($editSql);
+
+    if ($editResult->num_rows > 0) {
+        $editRow = $editResult->fetch_assoc();
+        echo "<div class=foamb><h3>Bewerk gegevens</h3>";
+        echo "<form method='post' action='".$_SERVER['PHP_SELF']."#editForm'>";
+        echo "<input type='hidden' name='woordenlijst_naam' value='$selectedNaam'>";
+        echo "<input type='hidden' name='edit_id' value='$editId'>";
+        echo "Woord: <input type='text' name='edit_woord' value='" . $editRow["woord"] . "' required><br>";
+        echo "Voorvoegsel: ";
+        echo "<select name='edit_voor_achtervoegsel'>";
+        echo "<option value=''>Nee</option>";
+        echo "<option value='Voorvoegsel' " . ($editRow["voor_achtervoegsel"] == 'Voorvoegsel' ? 'selected' : '') . ">Voorvoegsel</option>";
+        echo "<option value='Achtervoegsel' " . ($editRow["voor_achtervoegsel"] == 'Achtervoegsel' ? 'selected' : '') . ">Achtervoegsel</option>";
+        echo "</select><br>";
+        echo "Betekenis: <input type='text' name='edit_betekenis' value='" . $editRow["betekenis"] . "' required><br>";
+        echo "Zin Voor: <input type='text' name='edit_zin_voor' value='" . $editRow["zin_voor"] . "'><br>";
+        echo "Zin Achter: <input type='text' name='edit_zin_achter' value='" . $editRow["zin_achter"] . "'><br>";
+        echo "<input type='submit' name='update' value='Bijwerken'>";
+        echo "<a name='editForm'></a>";
+        echo "<input type='submit' name='cancel' value='Annuleren'>";
+        echo "</form></div>";
+
+        // JavaScript om naar de bodem van de pagina te scrollen
+        echo "<script>window.scrollTo(0,document.body.scrollHeight);</script>";
+    }
+}
+
+
+// Gegevens bijwerken
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["woordenlijst_naam"]) && isset($_POST["update"])) {
+    $editId = $_POST["edit_id"];
+    $editWoord = $_POST["edit_woord"];
+    $editVoorvoegsel = $_POST["edit_voor_achtervoegsel"];
+    $editBetekenis = $_POST["edit_betekenis"];
+    $editZinVoor = $_POST["edit_zin_voor"];
+    $editZinAchter = $_POST["edit_zin_achter"];
+
+    // Gegevens bijwerken op basis van $editId
+    $updateSql = "UPDATE $selectedNaam SET 
+                    woord='$editWoord', 
+                    voor_achtervoegsel='$editVoorvoegsel', 
+                    betekenis='$editBetekenis', 
+                    zin_voor='$editZinVoor', 
+                    zin_achter='$editZinAchter' 
+                  WHERE id=$editId";
+
+    if ($conn->query($updateSql) === TRUE) {
+        echo '<script>window.onload = function() { window.location.href = "'.$_SERVER['PHP_SELF'].'?woordenlijst_naam='.$selectedNaam.'"; }</script>';
+        exit();
+    } else {
+        echo "Error: " . $updateSql . "<br>" . $conn->error;
+    }
+}
+
+
+// Annuleren van bewerken
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["woordenlijst_naam"]) && isset($_POST["cancel"])) {
+    echo '<script>window.location.href = "'.$_SERVER['PHP_SELF'].'?woordenlijst_naam='.$selectedNaam.'#editForm";</script>';
+    exit();
+}
+
 
 // Woordenlijst weergeven
 function displayWoordenlijst($conn, $selectedNaam) {
@@ -107,7 +168,7 @@ function displayWoordenlijst($conn, $selectedNaam) {
                     <td>".$row["betekenis"]."</td>
                     <td>".$row["zin_voor"]."</td>
                     <td>".$row["zin_achter"]."</td>
-                    <td><a href='".$_SERVER['PHP_SELF']."?delete=".$row["id"]."&woordenlijst_naam=$selectedNaam' class=verwijder>Verwijder</a></td>
+                    <td><a href='".$_SERVER['PHP_SELF']."?edit=".$row["id"]."&woordenlijst_naam=$selectedNaam' class=verwijder>Bewerk</a> | <a href='".$_SERVER['PHP_SELF']."?delete=".$row["id"]."&woordenlijst_naam=$selectedNaam' class=verwijder onclick='return confirmDeleteRecord()'>Verwijder</a></td>
                 </tr>";
         }
 
@@ -117,11 +178,13 @@ function displayWoordenlijst($conn, $selectedNaam) {
     }
 }
 
-/// Knop om de gehele tabel te verwijderen met bevestiging
+
+// Knop om de gehele tabel te verwijderen met bevestiging
 echo "<form method='post' action='".$_SERVER['PHP_SELF']."' onsubmit='return confirmDelete()'>";
 echo "<input type='hidden' name='woordenlijst_naam' value='$selectedNaam' class=table_delete>";
 echo "<input type='submit' name='delete_whole_table' value='Verwijder gehele tabel' class=table_delete>";
 echo "</form>";
+
 
 // Gehele tabel verwijderen
 if (isset($_POST["delete_whole_table"])) {
@@ -138,10 +201,18 @@ if (isset($_POST["delete_whole_table"])) {
     }
 }
 
-
 // Sluit de verbinding
 $conn->close();
 ?>
+
+<div class="foam">
+    <h3>Importeer gegevens uit Excel</h3>
+    <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" enctype="multipart/form-data">
+        <input type="hidden" name="woordenlijst_naam" value="<?php echo $selectedNaam; ?>">
+        Selecteer Excel-bestand: <input type="file" name="excel_file" accept=".xlsx, .xls" required><br>
+        <input type="submit" name="import_excel" value="Importeer">
+    </form>
+</div>
 
 <br><br><a href="list.php" class=terug>Terug naar woordenlijsten</a>
 </body>

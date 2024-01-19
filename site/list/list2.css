@@ -51,6 +51,44 @@ body {
                 }
 
 
+.foamb {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 100px;
+    margin-left: 1%;
+}
+
+    .foamb h2 {
+        color: #333;
+        margin-top: 1%;
+    }
+
+    .foamb form {
+        display: flex;
+        flex-direction: column;
+    }
+
+        .foamb form input,
+        .foamb form select {
+            margin-bottom: 10px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+            .foamb form input[type="submit"] {
+                background-color: green;
+                color: #fff;
+                cursor: pointer;
+            }
+
+                .foamb form input[type="submit"]:hover {
+                    background-color: darkgreen;
+                }
+
+
 .table-container {
     margin-top: 20px;
 }
@@ -95,7 +133,6 @@ h2 {
     position: absolute;
     top: 3%;
     color: black;
-    width: 100%;
     font-size: 1.5em;
     margin-left: 5%;
     margin-right: 5%;

@@ -26,6 +26,7 @@ while ($row = $result->fetch_assoc()) {
 
     <!-- javascript -->
     <script src="source/js/openwindow.js"></script>
+    <script src="source/js/search.js"></script>
 
     <!-- ionicons -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
@@ -47,7 +48,14 @@ while ($row = $result->fetch_assoc()) {
     <h2> Er staan <?php echo count($tables); ?> Woordenlijsten voor je klaar</h2>
 </div>
 
-<div class="mainbody">
+<div class="mainbody" id="wordListContainer">
+
+<div class="search-container">
+    <input type="text" id="searchInput" placeholder="Search...">
+    <button onclick="filterWordLists()">Search</button>
+    <button onclick="clearFilter()">Clear</button>
+</div>
+
 
 <?php
 // Loop through each table and generate a box for each word list

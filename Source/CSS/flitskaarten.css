@@ -72,8 +72,8 @@ body {
 /* flitskaart css */
 .flip-card {
     background-color: transparent;
-    width: 380px;
-    height: 430px;
+    width: 280px;
+    height: 330px;
     perspective: 1000px;
     margin: 50px;
     border-radius: 20px;

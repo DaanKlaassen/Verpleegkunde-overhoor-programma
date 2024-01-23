@@ -44,17 +44,17 @@ while ($row = $result->fetch_assoc()) {
 </div>
 
 <div class="topbody">
-    <h1> Welkom terug, Max</h1>
+    <h1> Welkom terug, Gebruiker</h1>
     <h2> Er staan <?php echo count($tables); ?> Woordenlijsten voor je klaar</h2>
 </div>
-
-<div class="mainbody" id="wordListContainer">
 
 <div class="search-container">
     <input type="text" id="searchInput" placeholder="Search...">
     <button onclick="filterWordLists()">Search</button>
     <button onclick="clearFilter()">Clear</button>
 </div>
+
+<div class="mainbody" id="wordListContainer">
 
 <?php
 foreach ($tables as $table) {

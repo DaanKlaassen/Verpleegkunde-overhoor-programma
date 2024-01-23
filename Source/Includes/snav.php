@@ -1,8 +1,13 @@
+    <!-- ionicons -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
 <nav>
     <ul>
 
     <li>
-        <a class="a" href="#"><img src="assets/images/logo.jpg" alt=""class="photo"><span class="fas-photo">Gilde DevOps</span></a>
+        <a class="a" href="index.php"><img src="assets/images/logo.jpg" alt=""class="photo"><span class="fas-photo">Gilde DevOps</span></a>
     </li>
     <div class="info">
                 <li>

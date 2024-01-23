@@ -56,20 +56,15 @@ while ($row = $result->fetch_assoc()) {
     <button onclick="clearFilter()">Clear</button>
 </div>
 
-
 <?php
-// Loop through each table and generate a box for each word list
 foreach ($tables as $table) {
-    // Fetch the number of rows in each table (number of words)
     $stmt = $conn->prepare("SELECT COUNT(*) FROM `$table`");
     $stmt->execute();
     $stmt->bind_result($wordCount);
     $stmt->fetch();
     
-    // Close the result set before the next iteration
     $stmt->close();
 
-    // Generate the HTML for each word list box
     echo "<div class='testbox1'>";
     echo "<span class='listbox-title'>$table</span><br>";
     echo "<span class='listbox-progress'>Niet gestart</span>";
@@ -77,7 +72,7 @@ foreach ($tables as $table) {
     echo "<span class='listbox-description'>Een woordenlijst over ...</span>";
     echo "<div class='listbox-line'></div>";
     echo "<span class='listbox-amount'>$wordCount woorden</span>";
-    echo "<button class='listbox-startbutton' onclick='openPopup()'>Start</button>";
+    echo "<button class='listbox-startbutton' onclick='openPopup(\"$table\")'>Start</button>";
     echo "</div>";
 }
 ?>
@@ -89,15 +84,16 @@ foreach ($tables as $table) {
 
     <div class="gameselection">
         <div class="flitskaartbutton">
-            <a href="flipcard.php"> <img src="assets/images/flitskaarten.png" alt="flitskaarten"> </a>
+            <a id="flipcardLink" href="#"> <img src="assets/images/flitskaarten.png" alt="flitskaarten"> </a>
             <p>Flitskaarten</p>
         </div>
 
-        <div class="woordzoekerbutton">
-            <a href="#"> <img src="assets/images/woordzoekericon.png" alt="woordzoeker"> </a>
-            <p>Woordzoeker</p>
+        <div class="zininvullenbutton">
+            <a id="zinInvullenLink" href="#"> <img src="assets/images/woordzoekericon.png" alt="Zin invullen"> </a>
+            <p>Zinnen Invullen</p>
         </div>
     </div>
+
 </div>
 
 </body>

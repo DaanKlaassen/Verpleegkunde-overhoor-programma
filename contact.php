@@ -6,10 +6,12 @@
   <link rel="stylesheet" href="../CSS/contact.css">
   <link rel="stylesheet" href="../CSS/nav.css">
   <link rel="icon" type="image/x-icon" href="../img/icon.ico">
+  <link rel="stylesheet" href="source/CSS/contact.css">
+  <link rel="stylesheet" href="source/CSS/nav.css">
   <title>GildeDEVops</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<?php include "../cfg/nav/snav.php"?>
+<?php include "source/includes/snav.php"?>
 <body>
   <section>
     <!-- Main menu line on top of site -->

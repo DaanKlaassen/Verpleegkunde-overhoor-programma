@@ -1,9 +1,9 @@
 <?php
 // DB Configuration
-$host = "localhost";
-$username = "root";
-$password = "P@ssw0rd";
-$database = "vop";
+$host = "localhost:3306";
+$username = "voproot";
+$password = "$4Ki7h4z5";
+$database = "dylan_vop";
 
 $conn = new mysqli($host, $username, $password, $database);
 

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Pagina</title>
+</head>
+<body>
+
+    <h2>Login</h2>
+
+    <form id="loginForm" onsubmit="return checkLogin()">
+        <label for="username">Gebruikersnaam:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Wachtwoord:</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="submit">Inloggen</button>
+    </form>
+    
+    <br>
+    <a href="student_list.php">Terug</a>
+
+    <script src="source/js/script.js"></script>
+
+</body>
+</html>

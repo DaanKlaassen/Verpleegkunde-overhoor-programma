@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSV Hulp</title>
+</head>
+<body>
+
+    <p>Hoe de csv template eruit ziet is hoe de tabel in elkaar zit, dit kan dus niet worden aangepast.</p><br>
+    <p>Gegevens kunnen leeg worden ingevoerd maar Woord en Betekenis moeten zijn ingevuld i.v.m. de spellen en opdrachten.</p><br>
+    <p>De kolom voorvoegsel kan alleen leeg zijn of voorvoegsel of achtervoegsel zijn</p><br>
+    <p>De eerste regel van het csv bestand wordt automatisch overgeslagen dus de eerste regel hoeft niet te worden verwijdert 
+    <br>(waar woord, voorvoegsel, betekenis, zin voor en zin achter staan)</p><br>
+
+
+
+    <!-- Voeg een knop toe met een onclick attribuut om de downloadCSV functie aan te roepen -->
+    <button onclick="downloadCSV()">Download CSV template</button>
+
+    <script>
+    function downloadCSV() {
+            // Creëer een link element
+            var link = document.createElement("a");
+            // Definieer de inhoud van het CSV-bestand
+            var csvContent = "Woord; Voorvoegesel; Betekenis; Zin voor; Zin achter;";
+            // Creëer een Blob-object met de CSV-inhoud
+            var blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+            // Maak een URL voor het Blob-object
+            var url = URL.createObjectURL(blob);
+            // Stel de attributen van de link in
+            link.setAttribute("href", url);
+            link.setAttribute("download", "vop_template.csv");
+            // Voeg de link toe aan de pagina
+            document.body.appendChild(link);
+            // Simuleer een klik op de link om het downloaden te starten
+            link.click();
+            // Verwijder de link na het klikken
+            document.body.removeChild(link);
+        }</script>
+</body>
+</html>

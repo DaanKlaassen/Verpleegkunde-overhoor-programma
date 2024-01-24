@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta content="width=device-width">
-  <link rel="stylesheet" href="source/CSS/list.css">
-  <link rel="stylesheet" href="source/CSS/nav.css">
+  <link rel="stylesheet" href="source/css/list.css">
+  <link rel="stylesheet" href="source/css/nav.css">
   <link rel="icon" type="image/x-icon" href="../img/icon.ico">
   <title>GildeDEVops</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">

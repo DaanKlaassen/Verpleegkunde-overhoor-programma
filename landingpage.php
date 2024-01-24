@@ -3,7 +3,7 @@
 <meta content="width=device-width">
 
 <head>
-  <link rel="stylesheet" href="./Source/CSS/homepage.css">
+  <link rel="stylesheet" href="/source/css/homepage.css">
   <link rel="icon" type="image/x-icon" href="./Assets/icons/icon.ico">
   <title>GildeDEVops</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">

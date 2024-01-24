@@ -20,8 +20,8 @@ while ($row = $result->fetch_assoc()) {
 
 <head>
     <meta content="width=device-width" name="viewport">
-    <link rel="stylesheet" href="Source/CSS/index.css">
-    <link rel="stylesheet" href="Source/CSS/nav.css">
+    <link rel="stylesheet" href="source/css/index.css">
+    <link rel="stylesheet" href="source/css/nav.css">
     <link rel="icon" type="image/x-icon" href="Assets/Icons/icon.ico">
 
     <!-- javascript -->

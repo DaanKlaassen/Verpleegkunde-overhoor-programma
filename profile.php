@@ -4,8 +4,8 @@
 
 <head>
 <meta content="width=device-width" name="viewport">
-  <link rel="stylesheet" href="source/CSS/profile.css">
-  <link rel="stylesheet" href="source/CSS/nav.css">
+  <link rel="stylesheet" href="source/css/profile.css">
+  <link rel="stylesheet" href="source/css/nav.css">
   <link rel="icon" type="image/x-icon" href="assets/icons.ico">
   <title>GildeDEVops</title>
 </head>
